@@ -5,15 +5,22 @@ import Nav from './components/common/Nav'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/SplitText'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import ProjectCard from './components/landing/ProjectCard'
+import MotionPathPlugin from 'gsap/MotionPathPlugin'
+import Thanks from './components/landing/Thanks'
 
 const App = () => {
   gsap.registerPlugin(SplitText)
   gsap.registerPlugin(ScrollTrigger)
+  gsap.registerPlugin(MotionPathPlugin);
+
   return (
     <div className='w-full h-full '>
       <Nav/>
         <CenterDiv/>
         <Main/>
+        <ProjectCard/>
+        <Thanks/>
     </div>
   )
 }

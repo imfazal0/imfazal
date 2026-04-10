@@ -3,6 +3,7 @@ import HeroText from './HeroText'
 import Overlay from './Overlay'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap/all';
+import ProjectCard from './ProjectCard';
 
 const Main = () => {
     const ref = useRef(null);
@@ -12,7 +13,7 @@ const Main = () => {
                 scrollTrigger: {
                     trigger: ref.current,
                     pin: true,
-                    markers: true,
+                    // markers: true,
                     scrub: true,
                     start: 'top top',
                     end: 'bottom top'
@@ -58,7 +59,7 @@ const Main = () => {
 
     })
     return (
-        <div ref={ref} className='w-screen h-[300vh] bg-transparent z-10 text-white '>
+        <div ref={ref} className='w-screen h-[150vh] bg-transparent z-10 text-white '>
             <HeroText />
             <Overlay />
         </div>

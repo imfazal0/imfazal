@@ -11,7 +11,7 @@ const Overlay = () => {
                 start:"bottom bottom",
                 end:'1000 top',
                 scrub:1,
-                markers:true
+                // markers:true
             }
         })
 

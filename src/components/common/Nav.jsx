@@ -31,7 +31,7 @@ const NavItem = ({ children, setPosition }) => {
         <div
             onClick={handleNavClick}
             ref={ref}
-            className='w-1/5 h-[90%]  text-white capitalize  font-bold text-2xl flex items-center justify-center rounded-full '
+            className='w-1/5 h-[90%] select-none text-white capitalize  font-bold text-2xl flex items-center justify-center rounded-full '
         >
             {children}
         </div>

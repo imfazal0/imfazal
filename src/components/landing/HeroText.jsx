@@ -17,13 +17,13 @@ const HeroText = () => {
 
     return (
         <div className='hero w-screen h-screen flex items-center justify-center relative'>
-            <div ref={ref} className='text1 text-9xl  text-center leading-40 uppercase font-semibold'>
+            <div ref={ref} className='text1 md:text-9xl text-5xl  text-center md:leading-40  uppercase font-semibold'>
                 Crafting Digital <br /> Experiences
             </div>
-            <div className='text2 text-9xl opacity-0 absolute text-center leading-40 uppercase font-semibold'>
+            <div className='text2 md:text-9xl text-5xl opacity-0 absolute text-center md:leading-40  uppercase font-semibold'>
                 Building digital products
             </div>
-            <div className='text3 text-9xl opacity-0 absolute text-center leading-40 uppercase font-semibold'>
+            <div className='text3 md:text-9xl text-5xl opacity-0 absolute text-center md:leading-40  uppercase font-semibold'>
                 Creating seamless interactions
             </div>
         </div>
