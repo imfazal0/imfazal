@@ -8,4 +8,8 @@ body, html , #root {
   margin: 0;
 }
 
-@ka
+@layer utilities{
+  .crd{
+    transform: rotate(-10deg);
+  }
+}

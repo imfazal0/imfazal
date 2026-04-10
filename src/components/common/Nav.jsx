@@ -7,11 +7,11 @@ const Nav = () => {
     const [position, setPosition] = useState(0)
 
     return (
-        <header className='w-full h-[15vh] fixed flex items-center justify-center '>
-            <nav className='relative w-1/2 px-[2px] h-9/12 rounded-full bg-white/20 backdrop-blur-2xl border border-white flex items-center '>
+        <header className='w-full h-[15vh] fixed flex items-center justify-center z-20'>
+            <nav className='relative w-1/2 px-0.5  h-9/12 rounded-full bg-white/20 backdrop-blur-2xl border border-white flex items-center '>
                 {
                     pages.map((page) => (
-                        <NavItem setPosition={setPosition}>{page}</NavItem>
+                        <NavItem key={page} setPosition={setPosition}>{page}</NavItem>
                     ))
                 }
                 <Cursor position={position} />
