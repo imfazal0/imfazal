@@ -59,7 +59,7 @@ const Main = () => {
 
     })
     return (
-        <div ref={ref} className='w-screen h-[150vh] bg-transparent z-10 text-white '>
+        <div ref={ref} className='w-screen h-1/2 bg-transparent z-10 text-white  '>
             <HeroText />
             <Overlay />
         </div>

@@ -8,7 +8,7 @@ const ProjectCard = () => {
         const tl = gsap.timeline({
             scrollTrigger:{
                 trigger:ref.current,
-                markers:true,
+                // markers:true,
                 start:'top top',
                 end:'+2500 top',
                 pin:true,
@@ -39,7 +39,7 @@ const ProjectCard = () => {
 
     })
   return (
-    <div ref={ref} className='w-screen h-screen flex items-center justify-center relative gap-10'>
+    <div ref={ref} className='overflow-x-hidden w-screen h-screen flex items-center justify-center relative gap-10'>
             <div className='card h-[60%] aspect-square   bg-white/20 border border-white rounded-2xl bottom-0 -rotate-12 text-white text-2xl uppercase font-semibold p-[2%] py-[5%] flex flex-col items-center gap-5'>
                 <div>senior secondary</div>
                 <div className='capitalize text-gray-400'>

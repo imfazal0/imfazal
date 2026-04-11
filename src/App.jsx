@@ -8,6 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ProjectCard from './components/landing/ProjectCard'
 import MotionPathPlugin from 'gsap/MotionPathPlugin'
 import Thanks from './components/landing/Thanks'
+import Footer from './components/landing/Footer'
 
 const App = () => {
   gsap.registerPlugin(SplitText)
@@ -21,6 +22,7 @@ const App = () => {
         <Main/>
         <ProjectCard/>
         <Thanks/>
+        <Footer/>
     </div>
   )
 }
