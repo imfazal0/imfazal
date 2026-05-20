@@ -1,14 +1,18 @@
 import React from 'react'
 import ProjectCard from './ProjectCard'
+import { projectsData } from '../../../public/data/projects.data'
 
 const Projects = () => {
   return (
-    <div className='bg-transparent  py-[20vh] px-[5vw] flex flex-wrap gap-5'>
-        <ProjectCard/>
-        <ProjectCard/>
-        <ProjectCard/>
-        <ProjectCard/>
-    </div>
+    <main className='bg-transparent  py-[20vh] px-[5vw] flex flex-wrap gap-5'>
+        {
+            projectsData.map((project) => {
+                return(
+                    <ProjectCard project={project}/>
+                )
+            })
+        }
+    </main>
   )
 }
 

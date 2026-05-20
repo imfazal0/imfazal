@@ -13,6 +13,7 @@ import { BrowserRouter, Route, Routes } from 'react-router'
 import Home from './pages/landing/Home'
 import Projects from './pages/projects/Projects'
 import Footer from './components/common/Footer'
+import About from './pages/About/About'
 
 const App = () => {
   gsap.registerPlugin(SplitText)
@@ -29,7 +30,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
           <Route path='/project' element={<Projects />} />
-          <Route path='/about' element={<Home />} />
+          <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Home />} />
           <Route path='/resume' element={<Home />} />
         </Routes>
