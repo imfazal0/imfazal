@@ -1,14 +1,18 @@
 import React from 'react'
 import CenterDiv from './components/common/CenterDiv'
-import Main from './components/landing/Main'
+import Main from './pages/landing/Main'
 import Nav from './components/common/Nav'
 import gsap from 'gsap'
 import { SplitText } from 'gsap/SplitText'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import ProjectCard from './components/landing/ProjectCard'
+import ProjectCard from './pages/landing/ProjectCard'
 import MotionPathPlugin from 'gsap/MotionPathPlugin'
-import Thanks from './components/landing/Thanks'
-import Footer from './components/landing/Footer'
+import Thanks from './pages/landing/Thanks'
+
+import { BrowserRouter, Route, Routes } from 'react-router'
+import Home from './pages/landing/Home'
+import Projects from './pages/projects/Projects'
+import Footer from './components/common/Footer'
 
 const App = () => {
   gsap.registerPlugin(SplitText)
@@ -17,12 +21,21 @@ const App = () => {
 
   return (
     <div className='w-full h-full '>
-      <Nav/>
-        <CenterDiv/>
-        <Main/>
-        <ProjectCard/>
-        <Thanks/>
-        <Footer/>
+      <BrowserRouter>
+        <Nav />
+        <CenterDiv />
+
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/project' element={<Projects />} />
+          <Route path='/about' element={<Home />} />
+          <Route path='/contact' element={<Home />} />
+          <Route path='/resume' element={<Home />} />
+        </Routes>
+        <Footer />
+
+      </BrowserRouter>
     </div>
   )
 }
