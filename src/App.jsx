@@ -24,7 +24,7 @@ const App = () => {
 
   return (
     <div className='w-full h-full '>
-      <BrowserRouter>
+      <BrowserRouter basename='/imfazal'>
         <Nav />
         <CenterDiv />
 
