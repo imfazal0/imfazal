@@ -1,5 +1,6 @@
 import { RiFacebookFill, RiGithubFill, RiInstagramLine, RiTelegram2Fill, RiWhatsappLine } from '@remixicon/react'
 import React from 'react'
+import { Link } from 'react-router'
 
 const Footer = () => {
   return (
@@ -11,11 +12,11 @@ const Footer = () => {
                 <div className='w-full flex flex-col gap-2'>
                     Other usefull links
                     <ul className='flex gap-2 flex-wrap text-gray-400 '>
-                        <li className='w-1/3 hover:text-white' >Home</li>
-                        <li className='w-1/3 hover:text-white' >Project</li>
-                        <li className='w-1/3 hover:text-white' >About</li>
-                        <li className='w-1/3 hover:text-white' >Contact</li>
-                        <li className='w-1/3 hover:text-white' >Resume</li>
+                        <li className='w-1/3 hover:text-white' ><Link to={"/home"}>Home</Link></li>
+                        <li className='w-1/3 hover:text-white' ><Link to={"/project"}>Project</Link></li>
+                        <li className='w-1/3 hover:text-white' ><Link to={"/about"}>About</Link></li>
+                        <li className='w-1/3 hover:text-white' ><Link to={"/contact"}>Contact</Link></li>
+                        <li className='w-1/3 hover:text-white' ><Link to={"/resume"}>Resume</Link></li>
                     </ul>
                 </div>
                 <div className='w-full flex flex-col gap-2'>

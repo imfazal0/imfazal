@@ -15,6 +15,7 @@ import Projects from './pages/projects/Projects'
 import Footer from './components/common/Footer'
 import About from './pages/About/About'
 import Resume from './pages/Resume/Resume'
+import Contact from './pages/Contact/Contact'
 
 const App = () => {
   gsap.registerPlugin(SplitText)
@@ -32,7 +33,7 @@ const App = () => {
           <Route path='/home' element={<Home />} />
           <Route path='/project' element={<Projects />} />
           <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<Home />} />
+          <Route path='/contact' element={<Contact />} />
           <Route path='/resume' element={<Resume />} />
         </Routes>
         <Footer />
