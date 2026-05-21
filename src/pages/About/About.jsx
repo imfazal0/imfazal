@@ -1,8 +1,13 @@
 import React from 'react'
+import AboutHeroImage from './AboutHeroImage'
+import AboutHeroText from './AboutHeroText'
 
 const About = () => {
   return (
-    <div>About</div>
+    <div className='w-screen h-screen flex'>
+        <AboutHeroImage/>
+        <AboutHeroText/>
+    </div>
   )
 }
 

@@ -1,66 +1,138 @@
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap/all'
-import React, { useRef, useState } from 'react'
-import { Link, useNavigate } from 'react-router'
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import React, { useEffect, useRef, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 
-const pages = ["home", 'project', 'about', 'contact', 'resume']
+
+
+const pages = [
+  "home",
+  "project",
+  "about",
+  "contact",
+  "resume",
+];
+
 const Nav = () => {
-    const [position, setPosition] = useState(0)
+  const location = useLocation();
 
-    return (
-        <header className='w-full md:h-[15vh] h-[8vh] fixed flex items-center justify-center z-20'>
-            <nav className='relative md:w-1/2 w-[90%] px-0.5  md:h-9/12 h-[60%] rounded-full bg-white/20 backdrop-blur-2xl border border-white flex items-center '>
-                {
-                    pages.map((page) => (
-                        <NavItem key={page} setPosition={setPosition}>{page}</NavItem>
-                    ))
-                }
-                <Cursor position={position} />
-            </nav>
-        </header>
-    )
-}
+  const [position, setPosition] = useState(0);
 
-const NavItem = ({ children, setPosition }) => {
-    
-    const ref = useRef(null);
-    function handleNavClick() {
-        if (!ref.current) return;
-        setPosition(ref.current.offsetLeft*0.99);
-    }
+  
+  useEffect(() => {
 
-    return (
-        <Link to={`/${children}`} className='w-1/5  md:h-[90%] h-full select-none text-white capitalize  font-bold md:text-2xl text-sm flex items-center justify-center rounded-full '>
-        <div
-        onClick={handleNavClick}
-        ref={ref}
-         className='w-full h-full flex items-center justify-center'
-        >
-            {children}
-        </div>
-        </Link>
+    const currentPath = location.pathname.replace("/", "");
 
-    )
+    const index = pages.indexOf(currentPath);
 
-}
+    const safeIndex = index === -1 ? 0 : index;
 
+    setPosition(safeIndex);
+
+  }, [location.pathname]);
+
+  return (
+    <header
+      className="
+        w-full
+        md:h-[15vh]
+        h-[8vh]
+        fixed
+        top-0
+        left-0
+        flex
+        items-center
+        justify-center
+        z-50
+      "
+    >
+      <nav
+        className="
+          relative
+          md:w-1/2
+          w-[92%]
+          md:h-[70%]
+          h-[75%]
+          px-1
+          rounded-full
+          bg-white/10
+          backdrop-blur-2xl
+          border border-white/20
+          flex
+          items-center
+          overflow-hidden
+        "
+      >
+        <Cursor position={position} />
+
+        {pages.map((page) => (
+          <NavItem
+            key={page}
+            page={page}
+          />
+        ))}
+      </nav>
+    </header>
+  );
+};
+
+
+const NavItem = ({ page }) => {
+  return (
+    <Link
+      to={`/${page}`}
+      className="
+        relative z-10
+        w-1/5
+        h-full
+        flex
+        items-center
+        justify-center
+        rounded-full
+        text-white
+        capitalize
+        font-bold
+        md:text-xl
+        text-[11px]
+        transition-all
+        duration-300
+        hover:text-white/90
+        select-none
+      "
+    >
+      {page}
+    </Link>
+  );
+};
 
 const Cursor = ({ position }) => {
-    const ref = useRef(null);
-    console.log(ref.current);
-    useGSAP(() => {
 
-        gsap.to(ref.current, {
-            x: position
-        })
-    }, [position])
+  const ref = useRef(null);
 
-    return (
-        <div ref={ref} className='w-1/5 md:h-[90%] h-full bg-white/30  rounded-full absolute ' />
-    )
+  useGSAP(() => {
 
-}
+    gsap.to(ref.current, {
+      x: `${position * 100}%`,
+      duration: 0.4,
+      ease: "power3.out",
+    });
 
+  }, [position]);
 
-export default Nav
+  return (
+    <div
+      ref={ref}
+      className="
+        absolute
+        left-0
+        top-0
+        w-1/5
+        h-full
+        bg-white/20
+        rounded-full
+      "
+    />
+  );
+};
 
+export default Nav;
