@@ -144,7 +144,22 @@ features: [
     "Adjustable font size",
     "Responsive design"
 ]
-
+},
+{
+    "name": "Shahjahanpur Jobs",
+    "description": "A hyper-local job marketplace connecting employers and job seekers in Shahjahanpur and nearby districts. Features include job posting, application management, resume upload, and real-time updates with dark mode support.",
+    "tools": [
+        "React",
+        "Firebase (Auth, Firestore, Hosting)",
+        "Cloudflare Workers",
+        "Tailwind CSS",
+        "Cloudinary",
+        "React Router",
+        "Vite"
+    ],
+    "image": "https://ibb.co/v49Q4Wp3",
+    "about": "Shahjahanpur Jobs is a complete job marketplace platform designed for the Shahjahanpur region. Employers can post job vacancies, manage applications, and view applicant profiles. Job seekers can browse jobs, apply with their resumes, save favourite listings, and track their application status. The platform uses Firebase for authentication and data storage, Cloudinary for file uploads (resumes and company logos), and is deployed on Cloudflare Workers for global edge delivery. Dark mode, responsive design, and real-time updates ensure a smooth user experience across devices.",
+    "github": "https://github.com/imfazal0/ShahjahanpurJobs",
+    "liveURL": "spnjobs.pages.dev"
 }
-
 ]
